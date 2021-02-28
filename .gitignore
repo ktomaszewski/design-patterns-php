@@ -1,2 +1,8 @@
 # IDE
 .idea/
+
+# Docker
+docker-compose.yml
+
+# Other
+.env

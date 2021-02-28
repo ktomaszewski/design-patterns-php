@@ -1,0 +1,23 @@
+services:
+    backend:
+        build:
+            context: 'docker/backend'
+        container_name: 'design-patterns-php-backend'
+        image: 'design-patterns-php-backend'
+        tty: 'true'
+        user: "${DOCKER_USER_ID}:${DOCKER_USER_GROUP_ID}"
+        stdin_open: 'true'
+        restart: 'on-failure'
+        volumes:
+            - '.:/var/www/html'
+            - './docker/backend/config/php.ini:/usr/local/etc/php/conf.d/design-patterns-php.ini'
+        ports:
+            - '80:80'
+        env_file:
+            - '.env'
+        networks:
+            network: {}
+
+networks:
+    network:
+        name: 'design-patterns-php-network'
