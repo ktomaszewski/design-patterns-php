@@ -1,0 +1,33 @@
+{
+    "name": "ktomaszewski/design-patterns-php",
+    "description": "Design patterns written in PHP.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kamil Tomaszewski",
+            "email": "tomaszewski.kamil.97@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DesignPatternsPhp\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DesignPatternsPhp\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "ext-intl": "*",
+        "symplify/easy-coding-standard": "^9.2",
+        "phpunit/phpunit": "^9.5",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "dg/bypass-finals": "^1.3"
+    },
+    "scripts": {
+        "ecs-check": "vendor/bin/ecs check --match-git-diff",
+        "ecs-fix": "vendor/bin/ecs check --fix --match-git-diff",
+        "unit-tests": "vendor/bin/phpunit --configuration ./phpunit.xml"
+    }
+}
